@@ -5,31 +5,39 @@
 
 int main(void)
 {
+	
 	char znak; 
 	int rok, mies, dz, spr;
 
 	do
-    {
-		
-        printf("\n Wieczny kalendarz - podaje dzien tygodnia dla danej daty\n");
+    {		
+        printf("Wieczny kalendarz - podaje dzien tygodnia dla danej daty\n\n");
         do
         {
             fflush(stdin);
-            printf("\n Podaj rok: ");
-            spr = scanf("%d", &rok);
-            printf(" wartosc zwrocona przez scanf(): %d\n", spr);
+            
+            
+            // Range 966 - 2099
+            do{
+				printf("Podaj rok: ");
+				spr = scanf("%d", &rok);
+								
+			}while(!(rok >= 966 && rok <= 2099));
+            
+           
+            printf("Wartosc zwrocona przez scanf(): %d\n", spr);
         }while(!spr);
         do
         {
-            printf(" Podaj miesiac: ");
+            printf("Podaj miesiac: ");
             spr = scanf("%d", &mies);
             fflush(stdin);
-            printf(" wartosc zwrocona przez scanf(): %d\n", spr);
+            printf("wartosc zwrocona przez scanf(): %d\n", spr);
         }while(!((mies > 0) && (mies <=12)));
-        printf(" Podaj dzien: ");
+        printf("Podaj dzien: ");
         scanf("%d", &dz);
 
-        printf("\n Wybrana data: %d-%02d-%02d", rok, mies, dz);
+        printf("\nWybrana data: %d-%02d-%02d", rok, mies, dz);
 
         if(mies<3)
         {
