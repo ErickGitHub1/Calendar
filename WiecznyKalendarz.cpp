@@ -12,8 +12,7 @@ int main(void)
 	do
     {		
         printf("Wieczny kalendarz - podaje dzien tygodnia dla danej daty\n\n");
-        do
-        {
+        
             fflush(stdin);
             
             
@@ -26,16 +25,26 @@ int main(void)
             
            
             printf("Wartosc zwrocona przez scanf(): %d\n", spr);
-        }while(!spr);
+        
+        // Range for months 1 - 12
         do
         {
             printf("Podaj miesiac: ");
             spr = scanf("%d", &mies);
             fflush(stdin);
-            printf("wartosc zwrocona przez scanf(): %d\n", spr);
+            
         }while(!((mies > 0) && (mies <=12)));
-        printf("Podaj dzien: ");
-        scanf("%d", &dz);
+        printf("wartosc zwrocona przez scanf(): %d\n", spr);
+        
+        
+        // Range for days 1 - 31
+        do{
+			
+			printf("Podaj dzien: ");
+			scanf("%d", &dz);
+			
+		}while(!(dz > 0 && dz <= 31));
+        
 
         printf("\nWybrana data: %d-%02d-%02d", rok, mies, dz);
 
