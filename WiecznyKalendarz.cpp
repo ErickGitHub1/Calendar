@@ -8,10 +8,11 @@ int main(void)
 	
 	char znak; 
 	int rok, mies, dz, spr;
+	int flaga_przestepnosci = 0;
 
 	do
     {		
-        printf("Wieczny kalendarz - podaje dzien tygodnia dla danej daty\n\n");
+        printf("\nWieczny kalendarz - podaje dzien tygodnia dla danej daty\n\n");
         
             fflush(stdin);
             
@@ -27,9 +28,11 @@ int main(void)
             if((rok%4 == 0 && (rok%100 > 0 || rok%100 <0)) || ((rok%400) == 0))
             {
 					printf("Rok %d jest przestepny\n", rok);
+					flaga_przestepnosci = 1; 
 			}else
 			{
 					printf("Rok %d nie jest przestepny\n", rok);
+					flaga_przestepnosci = 0;
 			}
            
         
@@ -43,39 +46,133 @@ int main(void)
             {
 			case 1:
 				printf("Wybrany miesiac: Styczen\n");
+				
+				do{			
+					printf("Podaj dzien: ");
+					scanf("%d", &dz);
+			
+				}while(!(dz > 0 && dz <= 31));
+				
 				break;
 			case 2:
 				printf("Wybrany miesiac: Luty\n");
-				break;
+				
+				if(flaga_przestepnosci == 1)
+				{
+						do{			
+							printf("Podaj dzien: ");
+							scanf("%d", &dz);			
+						}while(!(dz > 0 && dz <= 29));
+						
+				}else
+				
+				{
+						do{			
+							printf("Podaj dzien: ");
+							scanf("%d", &dz);			
+						}while(!(dz > 0 && dz <= 28));
+				}
+				
+			    break;
 			case 3:
 				printf("Wybrany miesiac: Marzec\n");
+				
+				do{			
+					printf("Podaj dzien: ");
+					scanf("%d", &dz);
+			
+				}while(!(dz > 0 && dz <= 31));
+				
 				break;
 			case 4:
 				printf("Wybrany miesiac: Kwiecien\n");
+				
+				do{			
+					printf("Podaj dzien: ");
+					scanf("%d", &dz);
+			
+				}while(!(dz > 0 && dz <= 30));
+				
 				break;
 			case 5:
 				printf("Wybrany miesiac: Maj\n");
+				
+				do{			
+					printf("Podaj dzien: ");
+					scanf("%d", &dz);
+			
+				}while(!(dz > 0 && dz <= 31));
+				
 				break;
 			case 6:
 				printf("Wybrany miesiac: Czerwiec\n");
+				
+				do{			
+					printf("Podaj dzien: ");
+					scanf("%d", &dz);
+			
+				}while(!(dz > 0 && dz <= 30));
+				
 				break;
 			case 7:
 				printf("Wybrany miesiac: Lipiec\n");
+				
+				do{			
+					printf("Podaj dzien: ");
+					scanf("%d", &dz);
+			
+				}while(!(dz > 0 && dz <= 31));
+				
 				break;
 			case 8:
 				printf("Wybrany miesiac: Sierpien\n");
+				
+				do{			
+					printf("Podaj dzien: ");
+					scanf("%d", &dz);
+			
+				}while(!(dz > 0 && dz <= 31));
+				
 				break;
 			case 9:
 				printf("Wybrany miesiac: Wrzesien\n");
+				
+				do{			
+					printf("Podaj dzien: ");
+					scanf("%d", &dz);
+			
+				}while(!(dz > 0 && dz <= 30));
+				
 				break;
 			case 10:
 				printf("Wybrany miesiac: Pazdziernik\n");
+				
+				do{			
+					printf("Podaj dzien: ");
+					scanf("%d", &dz);
+			
+				}while(!(dz > 0 && dz <= 31));
+				
 				break;
 			case 11:
 				printf("Wybrany miesiac: Listopad\n");
+				
+				do{			
+					printf("Podaj dzien: ");
+					scanf("%d", &dz);
+			
+				}while(!(dz > 0 && dz <= 30));
+				
 				break;
 			case 12:
 				printf("Wybrany miesiac: Grudzien\n");
+				
+				do{			
+					printf("Podaj dzien: ");
+					scanf("%d", &dz);
+			
+				}while(!(dz > 0 && dz <= 31));
+				
 				break;										
 			default:
 				printf("Nie ma takiego miesiaca\n");
@@ -86,16 +183,7 @@ int main(void)
             
         }while(!((mies > 0) && (mies <=12)));
         
-        
-        
-        // Range for days 1 - 31
-        do{
-			
-			printf("Podaj dzien: ");
-			scanf("%d", &dz);
-			
-		}while(!(dz > 0 && dz <= 31));
-        
+       
 
         printf("\nWybrana data: %d-%02d-%02d", rok, mies, dz);
 
@@ -113,30 +201,29 @@ int main(void)
         switch (dz)
         {
             case 0:
-                printf(" Niedziela");
+                printf(" (Niedziela)");
                 break;
             case 6:
-                printf(" Sobota");
+                printf(" (Sobota)");
                 break;
             case 5:
-                printf(" Piatek");
+                printf(" (Piatek)");
                 break;
             case 4:
-                printf(" Czwartek");
+                printf(" (Czwartek)");
                 break;
             case 3:
-                printf(" Sroda");
+                printf(" (Sroda)");
                 break;
             case 2:
-                printf(" Wtorek");
+                printf(" (Wtorek)");
                 break;
             case 1:
-                printf(" Poniedzialek");
+                printf(" (Poniedzialek)");
                 break;
         }
-        printf(" zmienna spr=%d\n",spr);
-        printf("\n\n");
-		printf("Powtorzyc t/n? : ");
+        
+		printf("\nPowtorzyc t/n? : ");
 		//fflush(stdin);
 	    scanf("%s", &znak);
 		
