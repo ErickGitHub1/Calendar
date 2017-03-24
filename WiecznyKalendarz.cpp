@@ -38,6 +38,50 @@ int main(void)
         {
             printf("Podaj miesiac: ");
             spr = scanf("%d", &mies);
+            
+            switch(mies)
+            {
+			case 1:
+				printf("Wybrany miesiac: Styczen\n");
+				break;
+			case 2:
+				printf("Wybrany miesiac: Luty\n");
+				break;
+			case 3:
+				printf("Wybrany miesiac: Marzec\n");
+				break;
+			case 4:
+				printf("Wybrany miesiac: Kwiecien\n");
+				break;
+			case 5:
+				printf("Wybrany miesiac: Maj\n");
+				break;
+			case 6:
+				printf("Wybrany miesiac: Czerwiec\n");
+				break;
+			case 7:
+				printf("Wybrany miesiac: Lipiec\n");
+				break;
+			case 8:
+				printf("Wybrany miesiac: Sierpien\n");
+				break;
+			case 9:
+				printf("Wybrany miesiac: Wrzesien\n");
+				break;
+			case 10:
+				printf("Wybrany miesiac: Pazdziernik\n");
+				break;
+			case 11:
+				printf("Wybrany miesiac: Listopad\n");
+				break;
+			case 12:
+				printf("Wybrany miesiac: Grudzien\n");
+				break;										
+			default:
+				printf("Nie ma takiego miesiaca\n");
+				break;	
+			}
+			
             fflush(stdin);
             
         }while(!((mies > 0) && (mies <=12)));
