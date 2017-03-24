@@ -23,8 +23,15 @@ int main(void)
 								
 			}while(!(rok >= 966 && rok <= 2099));
             
+            // Checking if year is leap or not
+            if((rok%4 == 0 && (rok%100 > 0 || rok%100 <0)) || ((rok%400) == 0))
+            {
+					printf("Rok %d jest przestepny\n", rok);
+			}else
+			{
+					printf("Rok %d nie jest przestepny\n", rok);
+			}
            
-            printf("Wartosc zwrocona przez scanf(): %d\n", spr);
         
         // Range for months 1 - 12
         do
@@ -34,7 +41,7 @@ int main(void)
             fflush(stdin);
             
         }while(!((mies > 0) && (mies <=12)));
-        printf("wartosc zwrocona przez scanf(): %d\n", spr);
+        
         
         
         // Range for days 1 - 31
